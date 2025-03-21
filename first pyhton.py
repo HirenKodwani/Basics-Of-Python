@@ -42,23 +42,26 @@ a=int(input("Enter the first no:"))
 b=int(input("Enter the second no:"))
 print(a>=b)
 
-
-str_welcome="Thank you for Using Hiren's software."#Strings
+#Strings
+str_welcome="Thank you for Using Hiren's software."
 str_comeagain="please Visit Again."
-print (str_welcome+str_comeagain)#Concatination
+print (str_welcome+" ",str_comeagain)#Concatination with space in between
 print(len(str_comeagain))#Length of String
 ch = str_welcome[16]
 print(ch)#character in a String
 print(str_welcome[1])
+print(str_comeagain*3)#To print a string multiple times
 
 #Slicing of a String in between
 print(str_comeagain[1:6])
 #Slicing can be done backwards aswell
 print(str_comeagain[-5:-6])
+print(str_comeagain.split())#Functions in Strings
+str_comeagain[slice(1,6)]#another way of slicing
 
-str.index(str_comeagain.count("A"))#functions of strings
+str.index(str_comeagain.count("A"))#functions of strings to count no of any element in string and Indexing
 
-str_name=(input("Input Your Name"))
+str_name=(input("Input Your Name")) 
 print(len(str_name)) #no of charater in name 
 
 
@@ -94,18 +97,23 @@ else:
     print("Number is not a multiple of 7")   # To fine if the number is multiple of 7 
     
     
+#Lists(arrays) in Phython    
 hiren_ages = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
 print(hiren_ages)
 print(len(hiren_ages))
-print(hiren_ages[18])#Lists(arrays) in Phython
+print(hiren_ages[18])
 hiren = ["Hiren Kodwani","age 19","Sex: Male",]
 print(hiren[2])
 print(hiren_ages[5:9])#Slicing in Lists
 print(hiren.sort(reverse=True))
+hiren.insert(3,"Marital Status:Not Married")#to insert any element at any position in the list
 print(hiren)
 print(hiren_ages.remove(15))
-print(hiren_ages.pop(5))
-print(hiren_ages)#Deleating element from the list
+print(hiren_ages.pop(1))#Deleating element from the list
+print(hiren_ages)
+del hiren_ages(5,9)#Deleating element from the list using keyword
+print(hiren_ages)
+
 
 #Tupples
 hirenkodwani = (1,635413,88,4435,5468,)
@@ -118,8 +126,12 @@ print(hirenkodwani.__contains__)#Address of tupple
 movie1 = input("Enter your 1st favpurite movie:")
 movie2 = input("Enter your 2nd favourite movie:")
 movie3 = input("Enter your 3rd favourite movie:")
-movies = [movie1,movie2,movie3]
+movies = (movie1,movie2,movie3)
 print ("Your Favourite Movies are :",movies)#to store fav movies in a list
+
+hirenkodwani+=(movies)
+print(hirenkodwani)#Concatination in Tupples
+
 
 student_grade = ("C","D","A","A","B","B","A")
 print (student_grade.count("A")) #count no of A in student grades tupple
@@ -131,12 +143,12 @@ print(student_gradelist)#to sort grades of students
 
 
 
-#dictionary
+#Dictionary
 dictonary = {"hiren":"is a great person",
  "Rinky" :"Mother of hiren",
- "marks of hiren": {"A+","C-","B","A"}#nested dictionary
-}
-print ("Details of Hiren are", dictonary)
+ "marks of hiren": {"A+","C-","B","A"}}#nested dictionary
+
+print ("Details of Hiren are:", dictonary)
 dictonary["hiren"] = "kodwani"#overwriting in a dictionary
 print(dictonary)
 #functions in dictionary
@@ -144,18 +156,20 @@ print(len(dictonary))#gives no of unique values in a set/dictionary
 print(list(dictonary))
 mahesh = {"buissnessman": "Watches",
           "property":"land,houses and warehouses"}
-print(dictonary.update(mahesh))#addition of new dictionary into old one
-print(dictonary)
+print(dictonary.update(mahesh))#addition of new dictionary into old one using "update" function
 print(dictonary.keys())
+dictonary["hiren"] #Method for Indexing in Dictionary
 
 
-#sets: dictionary with unique elemets are called sets
+#Sets: dictionary with unique elemets are called sets
 numbers = {0,1,2,3,4,5,6,7,8,9}
 values = {7,8,9,10,11,2}
 print (type(numbers))
 print(numbers.pop())
 print(numbers.union(values))
 print("All numbers are",numbers.intersection(values))
+numbers = numbers,values
+print("All of the Numbers are:",numbers)#Concatination in Sets
 
 
 
@@ -213,7 +227,7 @@ while  i < len(given):
 print("loop ended")#Traversal in a tupple using loop
 
 
-#for loop
+#For loop
 teachers = ["mother","Alakh Pandey","Shradha didi","Khare BC","Pathak sir","Aniket sir"]
 for person in teachers:
     print(person)
@@ -248,7 +262,8 @@ for x in r:
 #RANGE with conditions
 r = range(100,0,-1)
 for x in r:
-    print("number is:",x)#to print the range putting conditions in range 
+    print("number is:",x)#to print the range putting conditions in range  
+print(r.index(2))#Indexing in range
     
 r = range(1,11)
 n = int(input("Number whose table is neede is :"))
@@ -299,6 +314,7 @@ average(582168,4684,6546,684638)#Used this way
 def length_list(list):
     print(len(list))
     return len  
+
 a = [1,2,3,4,5,6,7,0]
 length_list(a)#function to give length of a list
 
@@ -372,6 +388,8 @@ teachers = ["mother","Alakh Pandey","Shradha didi","Khare BC","Pathak sir","Anik
 
 elements_list(teachers)#Printing all elements of a list using Recursive index function 
 
+
+
 #FILES:
 f = open("C:/Users/ADMIN/Downloads/demo file.txt")#Accesing file
 admit_card= f.read()#Reading the file
@@ -422,3 +440,52 @@ with open("C:/Users/ADMIN/Downloads/Practice text.txt","w") as file:
     file.write(update)
       
       
+#ARRYS IN PYTHON:
+array =('f',[1,2,3,4,5,6,7,8,9,10])#in python arrys are made usning list with defining data type in array
+for a in array:
+    print(a)#to print a array in python "for" loop is used
+
+
+
+#NUMPY
+import numpy as numumy#including nummpy liabrary to the code
+hiroo = [20,18,16,15,10,12]
+arr = numumy.array(hiroo,dtype=int)#declaring an array using numpy
+arr = arr.reshape(2,3)#This transformation of 1D array to multi dimestional array is possible due to numpy liabrary
+print(arr)
+print(arr.shape)#Gives order of any array
+#addition of ultiple arrays
+q = numumy.array([[484,568],[638,548]],dtype=int)
+w = numumy.array([[478,535],[653,598]],dtype=int)
+print(q+w)#adds 2 arrays
+print(numumy)#Gives address of numpy liabrary in computer
+print(numumy.add(q,w))#adds 2 arrays
+print(numumy.sum(q))#Gives sum of all the elements of  array
+
+
+#PANDAS for Data Handling and analysis
+
+import pandas as pandu
+table = pandu.read_excel("C:/Users/ADMIN/Downloads/DSAC event flow 6 dec.xlsx")
+print(table)#This prints all the data from hthe excel sheet
+
+#Dataframes
+f=pandu.DataFrame({"name":["Hiren","Himanshu", "Harshal","Khushi"],"marks":[468,468,354,123]})#Dataframe which is a Data type of Pandas
+print(f)#Generated table is Shown here with above data
+SandP_Companies = pandu.read_excel("C:/Users/ADMIN/Downloads/S&P 500 Companies (Standard and Poor 500).xlsx")#Importing existing excel sheet using Pandas
+S = SandP_Companies.copy(deep=False)#Shallow copy
+S = SandP_Companies#Deep Copy
+print(SandP_Companies.tail)#last 5 rows 
+print(SandP_Companies.head)#First 5 rows
+print(SandP_Companies.at[4,"Sector"])
+print(SandP_Companies.iat[2,2])#Accesing each cell using functions of Pandas
+print(SandP_Companies.dtypes(Exception = []))#Shows the data type of the Data stored in the file or sheet
+print(SandP_Companies.select_dtypes(object))#Includes all the objects understood in the excel sheet
+
+#MATPLOTLIB - Data Visulaization
+import matplotlib as plt
+
+
+
+
+
