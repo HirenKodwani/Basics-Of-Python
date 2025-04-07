@@ -462,6 +462,16 @@ print(numumy)#Gives address of numpy liabrary in computer
 print(numumy.add(q,w))#adds 2 arrays
 print(numumy.sum(q))#Gives sum of all the elements of  array
 
+#Python For Data Science
+import numpy as np
+import random as rd
+#print (array=np.random.random([6,4]))
+hire=np.array([[123,684,684],[4,8,9]])
+print(hire.size)
+print(hire.shape)
+print(hire.reshape(3,2))
+print(np.sum([[4,8,7],[8,5,9]],axis = 1))#Sum of all elements in an Array
+
 
 #PANDAS for Data Handling and analysis
 
@@ -487,5 +497,194 @@ import matplotlib as plt
 
 
 
+#Stone Paper Sissor Game
+import random as ran
 
+random_chioice= ran.choice([-1,0,1])
+#-1 means stone
+#0 means paper
+#1 means sissor
+
+user = str(input("Write first letter capital \nStoooonnee Paaaappperr Sissor! :"))
+
+if(random_chioice==1 and user == "Stone"):
+    print("Computer------->Sissor")
+    print("Yaayyy You win")
+    
+elif(random_chioice==1 and user =="Sissor"):
+    print("Computer------->Sissor")
+    print("Its a Tiee!!")
+elif(random_chioice==1 and user == "Paper"):
+    print("Computer------->Sissor")
+    print("Better luck next time \nYou Loose")
+
+
+elif(random_chioice==-1 and user == "Paper"):
+    print("Computer------->Stone")
+    print("Yaayyy You win")
+elif(random_chioice==-1 and user =="Stone"):
+    print("Computer------->Stone")
+    print("Its a Tiee!!")
+elif(random_chioice==-1 and user == "Sissor"):
+    print("Computer------->Stone")
+    print("Better luck next time \nYou Loose")
+
+
+
+elif(random_chioice==0 and user == "Sissor"):
+    print("Computer------->Paper")
+    print("Yaayyy You win")
+elif(random_chioice==0 and user =="Paper"):
+    print("Computer------->Paper")
+    print("Its a Tiee!!")
+elif(random_chioice==0 and user == "Stone"):
+    print("Computer------->Paper")
+    print("Better luck next time\n You Loose")
+else:
+    print("Wrong Input ")
+
+
+#OOP in Python
+
+class Student: #Defining/Declaring Class
+   
+    school_name ="St. Paul Higher Secondary school"#Class Attribute defined whose data will be avilable in all its objets if printed
+   
+    def __init__(self,name,age):#Constructor for generating new objects with Reference (here as "Self") should be inclued in all the constructors
+       self.name =name#This is a parametrised 
+       self.age = age
+       print("Admiting a new Student in the Institution:") #Argument in the Constructor which will always run when ever the Constructor will be called 
+    def dashbord(self):
+        print("Hello Student ",self.name,"\nFrom Institution:",self.school_name)
+    def Telling_age(self):
+        print("Your Age is =",self.age)
+
+stu = Student("Himanshu","20")#definig Object of the Class Declared
+print(stu.name)
+print(stu.age)
+print(stu.school_name)
+stu.dashbord()
+
+stu1 = Student("Hiren Kodwani", "19")#Declaring another object
+stu1.age = 16#Defining new Parameters for New Object
+print(stu1.name)
+stu1.school_name = "Acropolis Institute"
+print(stu1.school_name)
+stu1.dashbord()
+stu1.Telling_age()
+#Destructor using "del" keyword
+del stu.name
+print(stu.name)#This will give an error as the object or Attribute is deleated by the destructor
+
+
+#Creating a Student Class to store name and marks with a method to calculate average score from marks
+
+class student():  
+    def __init__(self,name,mark1,mark2,mark3):
+        self.name = name
+        self.marks_maths =int (mark1)
+        self.marks_phy = int(mark2)
+        self.marks_chem = int(mark3)
+       
+    def average(self,name,mark1,mark2,mark3):
+        sum = mark1+mark2+mark3
+        print("The Averge Score of ",self.name,"Student is:",sum/3)
+    
+Hiren = student("Hiren Kodwani",38,68,95)
+Hiren.average("Hiren Kodwani",38,68,95)    
+
+
+#Database of Accounts using OOP in python with different Attributes and Methods of Debit,Credit and showing the balance in the account
+class Account():      
+    
+    def __init__(self,Balance,Account_no):
+        self.Bal = int(Balance)
+        self.acc = Account_no
+        print(Account_no,"Has a Blance of",Balance)
+        
+    
+    def Debit(self,amount):
+        self.Bal  += amount
+        print("Current Balance for Account no:",self.acc,"\nIs:",self.Bal)
+               
+    def Credit (self,amount):
+        self.Bal -=amount
+        print("Current Balance for Account no:",self.acc,"\nIs:",self.Bal)
+         
+    def Balance(self):
+        print("Current Balance for Account no:",self.acc,"\nIs:",self.Bal)
+        
+        
+acc1 = Account(684,"68768dw45846")
+acc1.Debit(48)
+acc1.Credit(8)
+acc1.Balance#Invoking the method from the class
+
+#Access Specifying in Python(public/private)
+
+class Student: #Defining/Declaring Class
+   #PRIVATE attribute
+    __school_name ="St. Paul Higher Secondary school"#Declaring any Variable or method with 2"__" before name of that entity makes that PRIVATE
+    #PRIVATE Method
+    def __dashbord(self):#Declaring any Variable or method with 2"__" before name of that entity makes that PRIVATE
+        print("Hello Student ",self.name,"\nFrom Institution:",self.school_name)
+        
+s1 = Student
+print(s1.__school_name)#This will give an error as the data in the class is Declared PRIVATE
+
+
+#INHERITANCE
+class Data():#Base Class
+    Company = "Accenture"
+    def names():
+        print("Hello People...")
+        
+class Company_data(Data):#Derived Class which is Inherited
+    def __init__(self,name):
+        self.names = name
+
+Hiren = Company_data("Hiren Kodwani")
+print(Hiren.Company)
+
+#Multi-level Inhertance:
+class Department_data(Company_data):#This is able to access data from 1st Class aswell 
+    def __init__(self,department_name):
+        self.department = department_name
+        
+Himanshu = Department_data("Development")
+print(Himanshu.Company)
+    
+    
+#Multiple Inhertance:
+class Department_data(Company_data,Data):#This is able to access data from 1st and 2nd class 
+    def __init__(self,department_name):
+        self.department = department_name
+        
+Himanshu = Department_data("Development")
+print(Himanshu.Company)       
+
+
+#POLYMORPHISM:
+
+#Operator Overloading:
+print(1+5)#Sum
+print("Hiren"+" Kodwani")#Concatinatoon
+print([684,686,321]+[8468,8464,6846])#Merging of Lists
+#Here Operator '+' has many different functions in a same code
+
+
+#To Find Area and Perimeter of a Circle Usinng OOP and Methods
+class Circle():
+    def __init__(self,r):
+        self.r = r
+
+    def Area(self):
+        return 3.14* self.r **2
+        
+    def Perimeter(self):
+        return 2*3.14*self.r
+
+C1 = Circle(5)
+print(C1.Area())
+print(C1.Perimeter())
 
