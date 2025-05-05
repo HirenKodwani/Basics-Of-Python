@@ -688,3 +688,31 @@ C1 = Circle(5)
 print(C1.Area())
 print(C1.Perimeter())
 
+#TO Generate A Random Passward of Desired Length:
+
+
+import random as ran
+import string #Includes all the trype od String Characters in the code
+(string.ascii_lowercase)
+(string.ascii_uppercase)
+(string.punctuation)
+random_Passward = string.ascii_uppercase+string.ascii_lowercase+string.digits+string.punctuation
+a= int(input("Length to Generate Passeawd is?:"))
+passward = ""  #Making a String to store Charaacters from the Loop
+for i in range(a):#Loop to generate Random Charaters for the required length of the Passward
+  passward += (ran.choice(random_Passward))
+  i+=1
+print("Your Random Passward of ",a,"Digits is :",passward)
+
+#Number Gussing game:
+
+import random as ran
+a = ran.randint(1,10)#This Function Chooses random integer from the range given
+b = int(input("Enter the Number to be Guessed"))
+
+if(a==b):
+    print("You Won my Broooo!!!!\nthe Number was:",a)
+elif(a!=b):
+      if(a>b):
+        print("Looserr my Boii!")
+
