@@ -716,3 +716,58 @@ elif(a!=b):
       if(a>b):
         print("Looserr my Boii!")
 
+#Types in Pyhton
+
+from typing import List,Tuple,Dict,Union #Importing User defined data types to be used in Typing
+name: str = "Hiren Kodwani"
+age: int = 20
+
+def sum(a:int,b: int)->int:#This typing of datatype is shown in functions
+    return a*b
+
+#Pattern Matching 
+int(status = input("What is the Status?:"))#Here input() returns a string ,Therefore int is mentioned as dtype 
+def checking_error(Status):
+    match Status:
+        case 200:
+            print("EVerything OK")
+        case 404:
+            print("404 Not Found")
+        case 500:
+            print("Internal Server Issue")
+        case _:
+            print("Unknown Status")        
+checking_error(500)
+
+#Exception Handling 
+try:
+    a=int(input("Enter is your Phone No:"))
+    print("Your Number is :",a)
+    
+except:#Here keyword 'except' is a catch block from C++
+    print("Please Enter a Number not a string")#if the above code does not run and gives a error the Except block will run and there would be No error dispayed
+
+finally:#This Block Runs when we want to run any code EVEN if there is an error in above code
+    print("Thank You")
+    
+    
+#Global and Local Values/Variable
+
+a = 89#Global Value
+def local():
+    a = 69#Local Value
+    print(a)
+     
+local()#As this is accesing the function defined value this will print 69 as output
+print(a)#This will print 89 as it is a Global Variable      
+
+
+#Format function:
+name = input("Enter name:")
+marks=int(input("Enter marks:"))
+Number = int(input("Enter Phone number :"))
+
+Result = "The Name of the Student is {}, He Scored {} marks and He has a phone with number {}".format(name,marks,Number)
+#Here format keyword is used to fit in variables in the result to be printed
+print(Result)
+
